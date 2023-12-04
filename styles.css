@@ -1,3 +1,18 @@
-h1 {
-    color: rgb(101, 101, 101);
+ul {
+    width: 75%;
   }
+body {
+    background-color:rgb(192, 192, 192)
+}
+.percent {
+    width: 80%;
+    border: 4mm ridge rgba(47, 47, 47, 0.6)
+    
+  }
+  background-image:linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
+background:no-repeat center/80% url("http://pic.sc1.fun/i/2023/12/02/656b13b178de8.jpg");
+
+  p {
+    font-family: fantasy;
+  }
+                  
