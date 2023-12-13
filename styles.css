@@ -2,11 +2,13 @@ ul {
     width: 75%;
   }
 body {
-    background-color:rgb(192, 192, 192)
+    background-color:rgb(216, 216, 216)
 }
 .percent {
-    width: 80%;
-    border: 4mm ridge rgba(47, 47, 47, 0.6)
+  border-radius: 23px;
+background: #dedede;
+box-shadow:  26px 26px 52px #a4a4a4,
+             -26px -26px 52px #ffffff;
     
   }
   background-image:linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
