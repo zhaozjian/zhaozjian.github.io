@@ -54,3 +54,25 @@ box-shadow:  26px 26px 52px #a4a4a4,
     transition: all 0.5s;
    }
 
+   .box#title {
+    position: fixed;
+    transition: 200ms;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #ffffffb8;
+    backdrop-filter: saturate(180%) blur(15px);
+    height: 50px;
+    overflow: hidden;
+    border-bottom: 1px solid #7f7f7f50;
+    z-index: 99;
+}
+
+.box.card{
+  border-radius: 12px;
+  /* box-shadow: 5px 5px 10px #0000000f; */
+  margin: 8px;
+  background-color: #7f7f7f20;
+  padding: 10px 20px;
+}
