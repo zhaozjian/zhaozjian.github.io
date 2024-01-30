@@ -5,10 +5,35 @@
     left: 0;
     width: 100%;
     padding: 10px 20px;
-    background-color: #ffffffb8;
+    background-color: rgba(39, 39, 39, 0.722);
     backdrop-filter: saturate(180%) blur(15px);
     height: 50px;
     overflow: hidden;
-    border-bottom: 1px solid #7f7f7f50;
+    border-bottom: 1px solid rgba(245, 244, 244, 0.314);
     z-index: 99;
+}
+body {
+    background-color:rgb(19, 19, 19)
+}
+.box.card1{
+    border-radius: 12px;
+    margin: 8px;
+    background-color: #7f7f7f20;
+    /*padding: 10px 800px;*/
+    position: absolute;
+    top: 100px;
+    
+    margin: 0 auto; /* 水平居中 */
+    max-width: 1200px; /* 容器最大宽度 */
+    padding: 0 30px; /* 左右留空 */
+  }
+
+.card.tit{
+    font-size:20px;
+    font-weight: bold;
+    line-height: 50px;
+    
+}
+.card.body{
+    font-size:15px;
 }
