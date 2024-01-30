@@ -1,0 +1,143 @@
+body {
+    background-color:rgb(23, 26, 28)
+}
+.box#title {
+    position: fixed;
+    transition: 200ms;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgba(39, 39, 39, 0.722);
+    backdrop-filter: saturate(180%) blur(15px);
+    height: 50px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(245, 244, 244, 0.314);
+    z-index: 99;
+}
+.card.tit{
+    font-size:20px;
+    font-weight: bold;
+    line-height: 45px;
+    margin-top: 10px; /* 上边距 */
+    margin-bottom: 10px; /* 下边距 */
+    
+}
+.box.card1{
+    border-radius: 12px;
+    margin: 8px;
+    background-color: #7f7f7f20;
+    padding: 10px 800px;
+    position: absolute;
+    top: 100px;
+    
+    margin: 50 auto; /* 水平居中 */
+    max-width: 210px; /* 容器最大宽度 */
+    padding: 0 30px; /* 左右留空 */
+
+    margin: /*上*/10px /*右*/50px /*下*/60px /*左*/50px;
+  }
+
+.box.card2{
+    border-radius: 12px;
+    margin: 8px;
+    background-color: #7f7f7f20;
+    padding: 10px 800px;
+    position: absolute;
+    top: 100px;
+    
+    margin: 50 auto; /* 水平居中 */
+    max-width: 210px; /* 容器最大宽度 */
+    padding: 0 30px; /* 左右留空 */
+
+    margin: /*上*/10px /*右*/50px /*下*/60px /*左*/400px;
+  }
+  .box.card3{
+    border-radius: 12px;
+    margin: 8px;
+    background-color: #7f7f7f20;
+    padding: 10px 800px;
+    position: absolute;
+    top: 100px;
+    
+    margin: 50 auto; /* 水平居中 */
+    max-width: 210px; /* 容器最大宽度 */
+    padding: 0 30px; /* 左右留空 */
+
+    margin: /*上*/10px /*右*/50px /*下*/60px /*左*/750px;
+  }
+  .box.card4{
+    border-radius: 12px;
+    margin: 8px;
+    background-color: #7f7f7f20;
+    padding: 10px 800px;
+    position: absolute;
+    top: 100px;
+    
+    margin: 50 auto; /* 水平居中 */
+    max-width: 210px; /* 容器最大宽度 */
+    padding: 0 30px; /* 左右留空 */
+
+    margin: /*上*/10px /*右*/50px /*下*/60px /*左*/1100px;
+  }
+
+
+
+
+
+
+/*----------------*/
+.btn {
+    font-size: 17px;
+    background: transparent;
+    border: none;
+    padding: 1em 1.5em;
+    color: #ffedd3;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin: /*上*/1px /*右*/50px /*下*/60px /*左*/200px;
+
+    position: relative; /* 必需 */
+    z-index: 999; /* 设置为较大的数字或auto */
+  }
+  
+  .btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #636e72;
+    transition: 0.5s ease;
+  }
+  
+  .btn:hover {
+    color: #1e1e2b;
+    transition-delay: 0.5s;
+  }
+  
+  .btn:hover::before {
+    width: 100%;
+  }
+  
+  .btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #636e72;
+    transition: 0.4s ease;
+    z-index: -1;
+  }
+  
+  .btn:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+  }
+  
