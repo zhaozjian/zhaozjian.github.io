@@ -1,0 +1,14 @@
+.box#title {
+    position: fixed;
+    transition: 200ms;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #ffffffb8;
+    backdrop-filter: saturate(180%) blur(15px);
+    height: 50px;
+    overflow: hidden;
+    border-bottom: 1px solid #7f7f7f50;
+    z-index: 99;
+}
