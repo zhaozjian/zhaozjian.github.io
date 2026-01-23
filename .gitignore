@@ -1,0 +1,8 @@
+*.bat
+
+Thumbs.db
+Desktop.ini
+
+/public/
+/resources/_gen/
+hugo_stats.json
