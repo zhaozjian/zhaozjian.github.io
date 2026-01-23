@@ -1,4 +1,4 @@
-baseURL = 'https://zhaozjian.github.io/'
+baseURL = 'https://example.org/'
 languageCode = 'zh-CN'
-title = '昭昭若日月之明'
+title = 'My New Hugo Site'
 theme = 'rusty-typewriter-main'
