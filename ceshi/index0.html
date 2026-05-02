@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=d
+    evice-width, initial-scale=1.0">
+    <title>三儿喇叭基地</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 褚遂良字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ffffff',
+                        secondary: '#000000',
+                        accent: '#333333',
+                        muted: '#888888',
+                    },
+                    fontFamily: {
+                        sans: ['Noto Serif SC', 'serif'],
+                    },
+                    height: {
+                        'hero': '280px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 24px rgba(255, 255, 255, 0.08);
+            }
+            .drawer {
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            .drawer.open {
+                transform: translateX(0);
+            }
+            .bg-gradient {
+                background: linear-gradient(180deg, #000000 0%, #111111 100%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-secondary text-primary font-sans min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 bg-secondary/95 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/2b7079176d724321ad97267573efe0bd.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260501185444262D5F1EF39330A0CA84&rrcfp=8a172a1a&x-expires=1778237684&x-signature=cOqW1vBDbpyuYtY7zNiXIwofSps%3D" alt="喇叭" class="h-10 w-10 mr-2">
+                <h1 class="text-xl font-bold">三儿喇叭基地</h1>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <button id="contact-btn" class="text-primary/80 hover:text-primary transition-colors text-sm">联系我们</button>
+                <button id="intro-btn" class="text-primary/80 hover:text-primary transition-colors text-sm">基地简介</button>
+                <button id="products-btn" class="text-primary/80 hover:text-primary transition-colors text-sm">喇叭基地制造</button>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-primary focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-accent w-full border-t border-gray-800">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-1">
+                <button id="mobile-contact-btn" class="py-3 hover:bg-gray-800 rounded transition-colors text-left text-sm px-2">联系我们</button>
+                <button id="mobile-intro-btn" class="py-3 hover:bg-gray-800 rounded transition-colors text-left text-sm px-2">基地简介</button>
+                <button id="mobile-products-btn" class="py-3 hover:bg-gray-800 rounded transition-colors text-left text-sm px-2">喇叭基地制造</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero区域 -->
+    <header class="h-hero bg-gradient flex items-center justify-center mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-wider">三儿喇叭基地</h1>
+            <p class="text-lg md:text-xl text-primary/70">传承京剧文化，弘扬传统艺术</p>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- 联系我们卡片 -->
+            <div class="bg-accent border border-gray-800 rounded-lg overflow-hidden card-hover cursor-pointer" id="contact-card">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-4 pb-2 border-b border-gray-700">联系我们</h2>
+                    <p class="text-primary/70 mb-6 text-sm">关注我们的哔哩哔哩账号，获取更多京剧资讯</p>
+                    <div class="flex justify-center">
+                        <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/a033b09a7b114ec79f1d02eb6cbc8830.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260501185444262D5F1EF39330A0CA84&rrcfp=8a172a1a&x-expires=1778237684&x-signature=%2BQNNlDYxfp8bCo2uME5gQKMVQ30%3D" alt="哔哩哔哩二维码" class="h-48 w-48">
+                    </div>
+                    <p class="text-center mt-4 text-primary/80 text-sm">扫码关注哔哩哔哩账号</p>
+                </div>
+            </div>
+
+            <!-- 基地简介卡片 -->
+            <div class="bg-accent border border-gray-800 rounded-lg overflow-hidden card-hover cursor-pointer" id="intro-card">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-4 pb-2 border-b border-gray-700">基地简介</h2>
+                    <p class="text-primary/70 mb-6 text-sm leading-relaxed">三儿喇叭基地成立于2025年，主营京剧老报纸翻译工作，京剧推文和京剧推荐。目前基地正在发展中。</p>
+                    <p class="text-primary/70 mb-4 text-sm">我们喜欢的演员：</p>
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                        <div class="text-center py-2 bg-gray-800 rounded">张学津</div>
+                        <div class="text-center py-2 bg-gray-800 rounded">张学海</div>
+                        <div class="text-center py-2 bg-gray-800 rounded">谭小培</div>
+                        <div class="text-center py-2 bg-gray-800 rounded">黄世骧</div>
+                        <div class="text-center py-2 bg-gray-800 rounded">马连良</div>
+                        <div class="text-center py-2 bg-gray-800 rounded">梅兰芳</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 喇叭基地制造卡片 -->
+            <div class="bg-accent border border-gray-800 rounded-lg overflow-hidden card-hover cursor-pointer" id="products-card">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-4 pb-2 border-b border-gray-700">喇叭基地制造</h2>
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-3 text-primary/90">吉祥物</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <img src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/a514cea28332490284375123f075c641.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260501185444262D5F1EF39330A0CA84&rrcfp=8a172a1a&x-expires=1778237684&x-signature=ZoX7zu44KULIPUmt81N%2BWr1iZIU%3D" alt="喇叭" class="h-24 w-24 mx-auto mb-2">
+                                <p class="text-sm">喇叭</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/62bd2fd29f784088bfdff1348353d551.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260501185444262D5F1EF39330A0CA84&rrcfp=8a172a1a&x-expires=1778237684&x-signature=ZwXWUEbd%2BCcDpbKGxtkqIhYnVvw%3D" alt="夏威夷果" class="h-24 w-24 mx-auto mb-2">
+                                <p class="text-sm">夏威夷果</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-primary/90">制造产品</h3>
+                        <p class="text-primary/70 text-sm py-4 text-center bg-gray-800 rounded">暂无产品</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-accent border-t border-gray-800 py-6 mt-auto">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-primary/70 text-sm">&copy; 2026 三儿喇叭基地. 保留所有权利.</p>
+            <p class="mt-2 text-primary/50 text-xs">传承京剧文化，弘扬传统艺术</p>
+        </div>
+    </footer>
+
+    <!-- 抽屉式菜单 - 联系我们 -->
+    <div id="contact-drawer" class="drawer fixed top-0 right-0 h-full w-full md:w-1/2 bg-secondary border-l border-gray-800 z-50 overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8 pb-2 border-b border-gray-800">
+                <h2 class="text-2xl font-bold">联系我们</h2>
+                <button class="close-drawer text-primary/60 hover:text-primary">
+                    <i class="fa fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col items-center py-4">
+                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/a033b09a7b114ec79f1d02eb6cbc8830.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260501185444262D5F1EF39330A0CA84&rrcfp=8a172a1a&x-expires=1778237684&x-signature=%2BQNNlDYxfp8bCo2uME5gQKMVQ30%3D" alt="哔哩哔哩二维码" class="h-64 w-64 mb-6">
+                <p class="text-lg font-medium">扫码关注哔哩哔哩账号</p>
+                <p class="mt-4 text-primary/60 text-sm">获取更多京剧资讯和内容更新</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 抽屉式菜单 - 基地简介 -->
+    <div id="intro-drawer" class="drawer fixed top-0 right-0 h-full w-full md:w-1/2 bg-secondary border-l border-gray-800 z-50 overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8 pb-2 border-b border-gray-800">
+                <h2 class="text-2xl font-bold">基地简介</h2>
+                <button class="close-drawer text-primary/60 hover:text-primary">
+                    <i class="fa fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="space-y-6">
+                <p class="text-primary/80 leading-relaxed">三儿喇叭基地成立于2025年，主营京剧老报纸翻译工作，京剧推文和京剧推荐。目前基地正在发展中。</p>
+                
+                <h3 class="text-xl font-semibold pt-2">我们喜欢的演员：</h3>
+                
+                <!-- 演员卡片 -->
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- 张学津 -->
+                    <div class="bg-accent border border-gray-800 rounded-lg p-4">
+                        <div class="flex items-center mb-3">
+                            <img src="https://p3-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/72484612fd714699824574154a403727~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1793184955&x-signature=L6dwNpNUzIt%2Fpz6tf3VimKaIiHY%3D" alt="张学津" class="h-16 w-16 rounded-full object-cover mr-4">
+                            <h4 class="text-lg font-semibold">张学津</h4>
+                        </div>
+                        <p class="text-sm text-primary/70 leading-relaxed">张学津（1941年9月-2012年12月），北京人，京剧老生演员，张君秋之子。1951年考入北京市戏曲学校，师从王少楼、陈少武习余派艺术。1961年拜马连良为师。代表剧目有《赵氏孤儿》《甘露寺》《借东风》《苏武牧羊》等，被誉为"马派第一老生"。</p>
+                    </div>
+                    
+                    <!-- 张学海 -->
+                    <div class="bg-accent border border-gray-800 rounded-lg p-4">
+                        <div class="flex items-center mb-3">
+                            <img src="https://p26-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/d726733dced7445ea79297e2d52d2085~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1793184955&x-signature=DO9FmqvYT9aaj0ACMTDNEZUHoYk%3D" alt="张学海" class="h-16 w-16 rounded-full object-cover mr-4">
+                            <h4 class="text-lg font-semibold">张学海</h4>
+                        </div>
+                        <p class="text-sm text-primary/70 leading-relaxed">张学海（1941年-2012年8月6日），北京人，京剧老生演员，张君秋之子，与张学津为双胞胎兄弟。师从周信芳先生，专工麒派老生。1952年入艺培戏曲学校学艺，初习花脸后改老生。1961年拜周信芳先生为师学习麒派艺术。</p>
+                    </div>
+                    
+                    <!-- 谭小培 -->
+                    <div class="bg-accent border border-gray-800 rounded-lg p-4">
+                        <div class="flex items-center mb-3">
+                            <img src="https://p3-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/9dacc432bb7d490fa7ac91123ba920c3~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1793184955&x-signature=q9%2F99RDlXqYBUvS0274ircVVTs4%3D" alt="谭小培" class="h-16 w-16 rounded-full object-cover mr-4">
+                            <h4 class="text-lg font-semibold">谭小培</h4>
+                        </div>
+                        <p class="text-sm text-primary/70 leading-relaxed">谭小培（1883年—1953年），原名谭嘉宾，原籍湖北江夏，出生于北京，梨园世家，谭门第三代嫡传人，京剧谭派老生表演艺术家、教育家。谭鑫培五子，谭富英父亲。嗓音苍凉、浑朴，韵味醇厚。常演剧目有《二进宫》《黄鹤楼》《黄金台》《碰碑》等。</p>
+                    </div>
+                    
+                    <!-- 黄世骧 -->
+                    <div class="bg-accent border border-gray-800 rounded-lg p-4">
+                        <div class="flex items-center mb-3">
+                            <img src="https://p26-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/5a64a1a9e00f438bb36f6f036365ae17~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1793184955&x-signature=tOM0vdLhwLPKpT4mHl2rCMWxSLc%3D" alt="黄世骧" class="h-16 w-16 rounded-full object-cover mr-4">
+                            <h4 class="text-lg font-semibold">黄世骧</h4>
+                        </div>
+                        <p class="text-sm text-primary/70 leading-relaxed">黄世骧，回族，中国京剧表演艺术家。自幼在家学戏，后参加剧团工作。开蒙老师是张盛利，武功老师是鲍盛启，吊嗓老师是杜奎。1957年回到北京加入北京青年京剧团工作。同年拜师贯大元并向于世文老师学习。能戏极多，腹笥渊博。</p>
+                    </div>
+                    
+                    <!-- 马连良 -->
+                    <div class="bg-accent border border-gray-800 rounded-lg p-4">
+                        <div class="flex items-center mb-3">
+                            <img src="https://p3-doubao-search-sign.byteimg.com/tos-cn-i-xv4ileqgde/b9e39ca82ca6408eb99fa7b476a003ba~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1793184955&x-signature=0X6YsemO%2FDL35Qo9VRLhrqOMaec%3D" alt="马连良" class="h-16 w-16 rounded-full object-cover mr-4">
+                            <h4 class="text-lg font-semibold">马连良</h4>
+                        </div>
+                        <p class="text-sm text-primary/70 leading-relaxed">马连良（1901年2月28日-1966年12月16日），字温如，生于北京，回族。京剧"马派"创始人，"四大须生"之一。将"生""末"两行的表演手段融为一体，极大地丰富了京剧的唱腔艺术，形成了唱念做相结合的风格。代表剧目有《赵氏孤儿》《借东风》《一捧雪》等。</p>
+                    </div>
+                    
+                    <!-- 梅兰芳 -->
+                    <div class="bg-accent border border-gray-800 rounded-lg p-4">
+                        <div class="flex items-center mb-3">
+                            <img src="https://p11-doubao-search-sign.byteimg.com/labis/354ea6db84aea5679cf180237865ec14~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1793184955&x-signature=r8cO%2BFSOdLRVImjG%2FQXQoDZmiHQ%3D" alt="梅兰芳" class="h-16 w-16 rounded-full object-cover mr-4">
+                            <h4 class="text-lg font-semibold">梅兰芳</h4>
+                        </div>
+                        <p class="text-sm text-primary/70 leading-relaxed">梅兰芳（1894年10月22日-1961年8月8日），名澜，字畹华，原籍江苏泰州，生于北京。"梅派"艺术创始人，中国京剧院首任院长。与程砚秋、荀慧生、尚小云合称"四大名旦"。代表剧目有《贵妃醉酒》《霸王别姬》《黛玉葬花》《游园惊梦》等。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 抽屉式菜单 - 喇叭基地制造 -->
+    <div id="products-drawer" class="drawer fixed top-0 right-0 h-full w-full md:w-1/2 bg-secondary border-l border-gray-800 z-50 overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8 pb-2 border-b border-gray-800">
+                <h2 class="text-2xl font-bold">喇叭基地制造</h2>
+                <button class="close-drawer text-primary/60 hover:text-primary">
+                    <i class="fa fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- 吉祥物部分 -->
+            <div class="mb-10">
+                <h3 class="text-xl font-semibold mb-6">吉祥物</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 喇叭 -->
+                    <div class="flex flex-col items-center">
+                        <img src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/a514cea28332490284375123f075c641.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260501185444262D5F1EF39330A0CA84&rrcfp=8a172a1a&x-expires=1778237684&x-signature=ZoX7zu44KULIPUmt81N%2BWr1iZIU%3D" alt="喇叭" class="h-48 w-48 mb-4">
+                        <h4 class="text-lg font-semibold mb-2">喇叭</h4>
+                        <p class="text-center text-primary/70 text-sm">一只樱桃萝卜，只是因为叫喇叭而且和地长关系很好（地长从来不吃樱桃萝卜）才被拉来当吉祥物的</p>
+                    </div>
+                    
+                    <!-- 夏威夷果 -->
+                    <div class="flex flex-col items-center">
+                        <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/62bd2fd29f784088bfdff1348353d551.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=20260501185444262D5F1EF39330A0CA84&rrcfp=8a172a1a&x-expires=1778237684&x-signature=ZwXWUEbd%2BCcDpbKGxtkqIhYnVvw%3D" alt="夏威夷果" class="h-48 w-48 mb-4">
+                        <h4 class="text-lg font-semibold mb-2">夏威夷果</h4>
+                        <p class="text-center text-primary/70 text-sm">一只夏威夷果。头上的起子是象征同时也可以作为走（弹）路（跳）好帮手。语言能力比较匮乏</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 制造产品部分 -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">制造产品</h3>
+                <div class="bg-accent border border-gray-800 rounded-lg p-8 text-center">
+                    <p class="text-primary/70 text-lg">暂无产品</p>
+                    <p class="text-primary/50 mt-2 text-sm">敬请期待我们的新产品</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 遮罩层 -->
+    <div id="overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 hidden"></div>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 抽屉式菜单控制
+        function openDrawer(drawerId) {
+            document.getElementById(drawerId).classList.add('open');
+            document.getElementById('overlay').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // 防止背景滚动
+        }
+
+        function closeAllDrawers() {
+            document.querySelectorAll('.drawer').forEach(drawer => {
+                drawer.classList.remove('open');
+            });
+            document.getElementById('overlay').classList.add('hidden');
+            document.body.style.overflow = ''; // 恢复背景滚动
+        }
+
+        // 联系我们
+        document.getElementById('contact-btn').addEventListener('click', () => openDrawer('contact-drawer'));
+        document.getElementById('mobile-contact-btn').addEventListener('click', () => {
+            openDrawer('contact-drawer');
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+        document.getElementById('contact-card').addEventListener('click', () => openDrawer('contact-drawer'));
+
+        // 基地简介
+        document.getElementById('intro-btn').addEventListener('click', () => openDrawer('intro-drawer'));
+        document.getElementById('mobile-intro-btn').addEventListener('click', () => {
+            openDrawer('intro-drawer');
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+        document.getElementById('intro-card').addEventListener('click', () => openDrawer('intro-drawer'));
+
+        // 喇叭基地制造
+        document.getElementById('products-btn').addEventListener('click', () => openDrawer('products-drawer'));
+        document.getElementById('mobile-products-btn').addEventListener('click', () => {
+            openDrawer('products-drawer');
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+        document.getElementById('products-card').addEventListener('click', () => openDrawer('products-drawer'));
+
+        // 关闭抽屉
+        document.querySelectorAll('.close-drawer').forEach(button => {
+            button.addEventListener('click', closeAllDrawers);
+        });
+
+        document.getElementById('overlay').addEventListener('click', closeAllDrawers);
+
+        // 点击页面其他地方关闭移动端菜单
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            
+            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
